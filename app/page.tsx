@@ -13,13 +13,16 @@ const navigation = [
   { label: "Contact", href: "#contact" },
 ];
 
+const engg1101NotionUrl =
+  "https://engineering-challenges.notion.site/ENGG1101-Engineering-Challenges-247d72aefb858052a816d5232746d4db?source=copy_link";
+
 const courses = [
   {
     title: "Engineering Challenge 1",
     description:
       "An introductory studio course where student teams explore engineering problems through iterative design and prototyping.",
     status: "ENGG1101",
-    detailsHref: "/engg1101",
+    detailsHref: engg1101NotionUrl,
   },
   {
     title: "Engineering Challenge 2",
@@ -239,7 +242,16 @@ export default function Home() {
                 <h3 className="mt-8 text-2xl font-semibold leading-tight text-slate-950">{course.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-slate-700">{course.description}</p>
                 <div className="mt-8 flex items-center gap-2 text-sm font-semibold text-slate-950">
-                  {course.detailsHref ? (
+                  {course.detailsHref?.startsWith("http") ? (
+                    <a
+                      href={course.detailsHref}
+                      className="rounded-full border border-slate-200 px-3 py-2 transition hover:border-slate-300 hover:bg-slate-50"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View details
+                    </a>
+                  ) : course.detailsHref ? (
                     <Link href={course.detailsHref} className="rounded-full border border-slate-200 px-3 py-2 transition hover:border-slate-300 hover:bg-slate-50">
                       View details
                     </Link>
