@@ -9,11 +9,11 @@ const engg1101NotionUrl =
 
 const navigation = [
   { label: "About", href: "#about" },
-  { label: "Team", href: "#team" },
   { label: "ENGG1101", href: engg1101NotionUrl },
   { label: "ENGG2202", href: "/engg2202" },
   { label: "Timetable", href: "#timetable" },
   { label: "Consultation", href: "#consultation" },
+  { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
 ];
 
